@@ -1,0 +1,70 @@
+.water-tracker {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+.whater-progress, .water-tracker{
+    color: aliceblue;
+}
+  .glass-visual {
+    width: 70px;
+    height: 100px;
+    margin: 16px 0;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+  }
+  .glass-outline {
+    width: 65px;
+    height: 95px;
+    border: 2px solid #b3c6f7;
+    border-radius: 0 0 22px 22px / 0 0 40px 40px;
+    position: relative;
+    overflow: hidden;
+    background: #eaf0fd;
+  }
+  .glass-fill {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: #6ea8fe;
+    transition: height 0.4s cubic-bezier(.19,1,.22,1);
+  }
+  .water-progress {
+    font-size: 28px;
+    font-weight: 500;
+    margin-bottom: 10px;
+  }
+  .water-controls {
+    display: flex;
+    gap: 28px;
+    margin-bottom: 10px;
+  }
+  .water-controls button {
+    background: #eaf0fd;
+    color: #3572fa;
+    border: none;
+    border-radius: 6px;
+    font-size: 22px;
+    font-weight: bold;
+    width: 48px;
+    height: 38px;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+  .water-controls button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+  .water-slider {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 8px;
+  }
+  .slider-value {
+    font-weight: 600;
+    margin-left: 6px;
+  }

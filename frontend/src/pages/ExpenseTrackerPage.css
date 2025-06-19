@@ -1,0 +1,83 @@
+.expense-tracker-main {
+    padding: 32px 3vw 40px 3vw;
+    background: #151b2c;
+    min-height: 100vh;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  .expense-tracker-row {
+    display: flex;
+    gap: 2vw;
+    margin-bottom: 28px;
+    width: 100%;
+    max-width: 100%;
+    align-items: stretch;
+  }
+  
+  .budget-goal-container,
+  .expense-form-container,
+  .recent-expenses-container {
+    flex: 1 1 0;
+    min-width: 220px;
+    display: flex;
+    flex-direction: column;
+    justify-content: stretch;
+  }
+  
+  .budget-goal-container {
+    max-width: 340px;
+    margin-right: 1vw;
+  }
+  .expense-form-container {
+    max-width: 400px;
+    margin-right: 1vw;
+  }
+  .recent-expenses-container {
+    max-width: 700px;
+    margin-left: 0;
+  }
+  
+  .expense-tracker-charts-row {
+    display: flex;
+    gap: 2vw;
+    width: 100%;
+    max-width: 100%;
+    margin-top: 10px;
+    align-items: stretch;
+  }
+  
+  .pie-chart-card, .line-chart-card {
+    flex: 1 1 0;
+    min-width: 320px;
+    background: #fff;
+    border-radius: 16px;
+    padding: 28px 18px 22px 18px;
+    box-shadow: 0 1px 4px 0 rgba(0,0,0,0.03);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .pie-chart-card {
+    margin-right: 1vw;
+    max-width: 480px;
+  }
+  
+  .line-chart-card {
+    margin-left: 1vw;
+    max-width: 900px;
+  }
+  
+  @media (max-width: 1200px) {
+    .expense-tracker-row, .expense-tracker-charts-row {
+      flex-direction: column;
+      gap: 22px;
+    }
+    .budget-goal-container, .expense-form-container, .recent-expenses-container,
+    .pie-chart-card, .line-chart-card {
+      margin: 0 !important;
+      min-width: 0;
+      max-width: 100%;
+    }
+  }

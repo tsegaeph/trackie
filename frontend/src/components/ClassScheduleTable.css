@@ -1,0 +1,156 @@
+.class-schedule-dialog {
+    min-width: 420px;
+    max-width: 98vw;
+    max-height: 520px;
+    background: #fff;
+    border-radius: 12px;
+    padding: 0;
+    overflow-x: auto;
+    overflow-y: auto;
+    position: relative;
+    box-shadow: 0 2px 16px rgba(0,0,0,0.09);
+  }
+  
+  .class-schedule-header {
+    background: #232c48;
+    color: #fff;
+    padding: 10px 18px 6px 18px;
+    font-size: 1.07rem;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    font-weight: 700;
+  }
+  
+  .class-schedule-table {
+    border-collapse: collapse;
+    width: 100%;
+    background: #fafbff;
+    font-size: 0.87rem;
+  }
+  
+  .sched-time-th {
+    width: 44px;
+    background: #f5f7fa;
+    color: #3874c9;
+    font-weight: 600;
+    border-bottom: 2px solid #3874c9;
+    font-size: 0.85rem;
+    padding: 3px 0;
+  }
+  
+  .sched-day-th {
+    background: #3874c9;
+    color: #fff;
+    font-weight: 600;
+    border-bottom: 2px solid #3874c9;
+    padding: 4px 0;
+    font-size: 0.85rem;
+  }
+  
+  .sched-time-td {
+    background: #f5f7fa;
+    color: #3874c9;
+    font-weight: 600;
+    text-align: right;
+    padding: 3px 6px;
+    border-right: 1px solid #e3e9f4;
+    font-size: 0.81rem;
+  }
+  
+  .sched-cell {
+    min-width: 55px;
+    max-width: 82px;
+    padding: 2.5px 2px 2.5px 2px;
+    border: 1px solid #e3e9f4;
+    text-align: center;
+    font-size: 0.84rem;
+    color: #232c48;
+    border-right: 1px solid #e3e9f4;
+    border-bottom: 1px solid #e3e9f4;
+    transition: background 0.14s;
+    cursor: pointer;
+    user-select: none;
+    position: relative;
+    word-break: break-word;
+    line-height: 1.1;
+  }
+  
+  /* Modal styles for editing (unchanged) */
+  .sched-edit-modal-backdrop {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(30,40,80,0.35);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1100;
+  }
+  .sched-edit-modal {
+    background: #fff;
+    border-radius: 14px;
+    padding: 20px 18px 14px 18px;
+    min-width: 260px;
+    max-width: 90vw;
+    min-height: 70px;
+    box-shadow: 0 2px 14px 0 rgba(0,0,0,0.04);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .sched-edit-textarea {
+    width: 90%;
+    border-radius: 7px;
+    border: 1.5px solid #d5dbef;
+    padding: 7px 9px;
+    font-size: 0.95rem;
+    outline: none;
+    min-height: 38px;
+    resize: none;
+  }
+  .sched-edit-actions {
+    display: flex;
+    gap: 14px;
+    margin-top: 2px;
+  }
+  .sched-save-btn {
+    padding: 7px 15px;
+    background: #1a7e0d;
+    color: #fff;
+    border-radius: 7px;
+    border: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    cursor: pointer;
+  }
+  .sched-save-btn:hover { background: #269c5c; }
+  .sched-delete-btn {
+    padding: 7px 13px;
+    background: #d11515;
+    color: #fff;
+    border-radius: 7px;
+    border: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    cursor: pointer;
+  }
+  .sched-delete-btn:hover { background: #d64545; }
+  .sched-cancel-btn {
+    padding: 7px 10px;
+    background: #bfcbe3;
+    color: #232c48;
+    border-radius: 7px;
+    border: none;
+    font-weight: 500;
+    font-size: 0.93rem;
+    cursor: pointer;
+  }
+  .sched-cancel-btn:hover { background: #e3e9f4; }
+  
+  /* Color classes (unchanged) */
+  .sched-cell.breakfast { background: #e5eefc; color: #1a2340; }
+  .sched-cell.math      { background: #dbe5f6; color: #3874c9; font-weight: 600;}
+  .sched-cell.bio       { background: #e8f6e3; color: #419b46; font-weight: 600;}
+  .sched-cell.eng       { background: #f6e6f9; color: #b15edb; font-weight: 600;}
+  .sched-cell.physics   { background: #e6f9ef; color: #2ecc99; font-weight: 600;}
+  .sched-cell.study     { background: #fff8e3; color: #bfa243;}

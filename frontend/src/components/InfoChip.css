@@ -1,0 +1,38 @@
+.info-chip {
+    display: flex;
+    align-items: center;
+    background: #232c48;
+    border-radius: 12px;
+    padding: 12px 20px;
+    min-width: 180px;
+    gap: 10px;
+  }
+  
+  .info-chip--blue {
+    background: #253167;
+  }
+  .info-chip--green {
+    background: #14442e;
+  }
+  
+  .info-chip-icon {
+    font-size: 1.6rem;
+    margin-right: 10px;
+  }
+  
+  .info-chip-content {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+  
+  .info-chip-label {
+    color: #bfcbe3;
+    font-size: 0.93rem;
+  }
+  
+  .info-chip-main {
+    color: #fff;
+    font-weight: 600;
+    font-size: 1.07rem;
+  }

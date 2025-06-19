@@ -1,0 +1,37 @@
+.dashboard-header-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    background: #19213a;
+    border-radius: 16px;
+    padding: 32px 40px;
+    margin-bottom: 32px;
+    box-shadow: 0 1px 4px 0 rgba(0,0,0,0.03);
+    min-height: 180px;
+    width: 90%;
+    gap: 32px;
+  }
+  
+  .dashboard-header-left {
+    flex: 2;
+    color: azure;
+  }
+  
+  .dashboard-header-right {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+  }
+  
+  .dashboard-header-date {
+    color: #bfcbe3;
+    margin-top: 8px;
+    margin-bottom: 24px;
+    font-size: 1rem;
+  }
+  
+  .dashboard-header-chips-row {
+    display: flex;
+    gap: 20px;
+  }

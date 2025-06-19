@@ -1,0 +1,155 @@
+.dashboard-main {
+    padding: 32px 40px;
+    background: #151b2c;
+    min-height: 100vh;
+    width: 100%;
+  }
+  
+  .dashboard-progress-row {
+    background: #19213a;
+    border-radius: 16px;
+    padding: 26px 32px 32px 32px;
+    box-shadow: 0 1px 4px 0 rgba(0,0,0,0.03);
+    margin-bottom: 32px;
+  }
+  
+  .dashboard-progress-title {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: #e2e5f0;
+    margin-bottom: 22px;
+  }
+  
+  .dashboard-progress-cards {
+    display: flex;
+    gap: 24px;
+  }
+
+  .dashboard-header-row {
+    display: flex;
+    gap: 32px; /* Increased gap for more space between the cards */
+    margin-bottom: 32px;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    overflow: hidden;
+  }
+
+  .dashboard-header-card-container {
+    flex: 2.3;
+    width: 20px;
+  }
+  
+  .quote-card-container {
+    flex: 1;
+    min-width: 0;
+    max-width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .dashboard-main {
+    padding: 32px 40px;
+    background: #151b2c;
+    min-height: 100vh;
+    width: 100%;
+  }
+  
+  .dashboard-progress-row {
+    background: #19213a;
+    border-radius: 16px;
+    padding: 26px 32px 32px 32px;
+    box-shadow: 0 1px 4px 0 rgba(0,0,0,0.03);
+    margin-bottom: 32px;
+  }
+  
+  .dashboard-progress-title {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: #e2e5f0;
+    margin-bottom: 22px;
+  }
+  
+  .dashboard-progress-cards {
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+  
+  /* Make cards stack vertically on small screens */
+  @media (max-width: 768px) {
+    .dashboard-progress-cards {
+      flex-direction: column;
+      gap: 16px;
+    }
+  }
+  
+  .dashboard-header-row {
+    display: flex;
+    gap: 32px;
+    margin-bottom: 32px;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    overflow: hidden;
+  }
+  
+  .dashboard-header-card-container {
+    flex: 2.3;
+    width: 20px;
+  }
+  
+  .quote-card-container {
+    flex: 1;
+    min-width: 0;
+    max-width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  /* === Responsive Adjustments === */
+  
+  /* Tablet view */
+  @media (max-width: 1024px) {
+    .dashboard-main {
+      padding: 24px;
+    }
+  
+    .dashboard-header-row {
+      flex-direction: column;
+      gap: 24px;
+    }
+  
+    .dashboard-header-card-container,
+    .quote-card-container {
+      flex: unset;
+      width: 100%;
+    }
+  }
+  
+  /* Mobile view */
+  @media (max-width: 600px) {
+    .dashboard-main {
+      padding: 16px;
+    }
+  
+    .dashboard-progress-row {
+      padding: 20px;
+    }
+  
+    .dashboard-progress-title {
+      font-size: 1rem;
+      margin-bottom: 16px;
+    }
+  
+    .dashboard-progress-cards {
+      gap: 12px;
+    }
+  
+    .dashboard-header-row {
+      gap: 16px;
+    }
+  }
+  

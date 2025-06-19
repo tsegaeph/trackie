@@ -1,0 +1,54 @@
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .modal-card {
+    background: #19213a;
+    padding: 2rem;
+    border-radius: 12px;
+    width: 300px;
+    text-align: center;
+  }
+  
+  .modal-profile-image {
+    position: relative;
+    margin-bottom: 1rem;
+  }
+  
+  .circle-image {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+  
+  .upload-button {
+    position: absolute;
+    bottom: 0;
+    right: 20;
+    background: #007bff;
+    color: white;
+    border-radius: 50%;
+    padding: 0.3rem 0.6rem;
+    cursor: pointer;
+    font-weight: bold;
+  }
+  
+  .upload-button input {
+    display: none;
+  }
+  
+  .modal-actions {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: space-around;
+  }
+  

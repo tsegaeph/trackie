@@ -1,0 +1,33 @@
+.social-login {
+    margin-top: 20px;
+    text-align: center;
+  }
+  .social-login p{
+    color: azure;
+  } 
+  .google-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background-color: rgb(151, 136, 136);
+    color: #a77c7c;
+    border: 1px solid #ccc;
+    padding: 10px 16px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background-color 0.2s ease;
+    position: relative;
+    left: 40px;
+  }
+  
+  .google-button:hover {
+    background-color: #f7f7f7;
+  }
+  
+  .google-button img {
+    width: 20px;
+    height: 20px;
+  }
+  

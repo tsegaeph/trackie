@@ -1,0 +1,32 @@
+.weather-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #232c48;
+    border-radius: 12px;
+    padding: 18px 24px;
+    min-width: 120px;
+    color: #FFD600;
+    box-shadow: 0 1px 4px 0 rgba(0,0,0,0.03);
+  }
+  
+  .weather-icon svg {
+    display: block;
+  }
+  
+  .weather-info {
+    text-align: center;
+    margin-top: 6px;
+  }
+  
+  .weather-temp {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #FFD600;
+  }
+  
+  .weather-location {
+    font-size: 0.97rem;
+    color: #bfcbe3;
+    margin-top: 3px;
+  }

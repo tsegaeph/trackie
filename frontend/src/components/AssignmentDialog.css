@@ -1,0 +1,60 @@
+.assignment-dialog {
+    min-width: 320px;
+  }
+  .assignment-input-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 14px;
+  }
+  .assignment-input, .assignment-datepicker {
+    border-radius: 8px;
+    border: 1.5px solid #d5dbef;
+    padding: 10px 11px;
+    font-size: 1rem;
+    outline: none;
+    transition: border 0.19s;
+  }
+  .assignment-input:focus, .assignment-datepicker:focus {
+    border: 1.5px solid #31ca7c;
+  }
+  .assignment-add-btn {
+    padding: 10px 18px;
+    background: #1ea11e;
+    color: #fff;
+    font-weight: 600;
+    border-radius: 8px;
+    border: none;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.16s;
+  }
+  .assignment-add-btn:hover {
+    background: #269c5c;
+  }
+  .assignment-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  .assignment-list-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 7px;
+    font-size: 1.05rem;
+  }
+  .assignment-delete-btn {
+    margin-left: 10px;
+    padding: 5px 13px;
+    background: #df0d0d;
+    color: #fff;
+    border-radius: 8px;
+    border: none;
+    font-size: 0.98rem;
+    cursor: pointer;
+    transition: background 0.16s;
+  }
+  .assignment-delete-btn:hover {
+    background: #d64545;
+  }

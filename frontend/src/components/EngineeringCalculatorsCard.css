@@ -1,0 +1,147 @@
+.eng-calc-card {
+  background: #19213a;
+  border-radius: 20px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+  padding: 1.5rem;
+  margin: 1rem 0;
+  border: #747272 solid 0.5px;
+  height: 35vh;
+}
+
+
+.eng-calc-title {
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  color: rgb(217, 217, 218);
+}
+
+.eng-calc-list-vertical {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.eng-calc-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background: #2e405e;
+  border: none;
+  border-radius: 6px;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.eng-calc-item:hover,
+.eng-calc-item:focus {
+  background: #455c83;
+  outline: none;
+}
+
+.eng-calc-icon {
+  font-size: 1.5rem;
+}
+
+.eng-calc-label {
+  flex: 1;
+  text-align: left;
+}
+
+/* Modal styles */
+.eng-calc-modal-bg {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+.eng-calc-modal-content {
+  background: #2e405e;
+  border-radius: 15px;
+  padding: 2rem;
+  min-width: 320px;
+  max-width: 95vw;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+  box-shadow: 0 2px 18px rgba(0,0,0,0.23);
+  animation: popIn 0.18s;
+}
+@keyframes popIn {
+  from { transform: scale(0.95); opacity: 0;}
+  to { transform: scale(1); opacity: 1;}
+}
+.eng-calc-modal-close {
+  position: absolute;
+  top: 12px;
+  right: 16px;
+  background: transparent;
+  border: none;
+  font-size: 2rem;
+  color: #d4d3d3;
+  cursor: pointer;
+}
+.eng-calc-modal-close:hover {
+  color: #d44;
+}
+
+/* Calculator-specific styles */
+.calc-modal-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.calc-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.calc-form label {
+  display: flex;
+  flex-direction: column;
+  font-weight: 500;
+  color: aliceblue;
+}
+
+.calc-form input[type="number"] {
+  padding: 0.4em 0.7em;
+  margin-top: 0.2em;
+  border-radius: 4px;
+  border: 1px solid #d0d7de;
+  font-size: 1em;
+  border-radius: 10px
+}
+
+.calc-form button[type="submit"] {
+  margin-top: 0.8em;
+  padding: 0.5em 1em;
+  background: #3766b3;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 1em;
+  cursor: pointer;
+  transition: background 0.16s;
+}
+.calc-form button[type="submit"]:hover {
+  background: #2563eb;
+}
+
+.calc-result {
+  font-size: 1.15em;
+  margin-top: 0.5em;
+  color: #222c;
+}
+
+.calc-desc {
+  font-size: 0.95em;
+  color: #b4b4b4;
+}

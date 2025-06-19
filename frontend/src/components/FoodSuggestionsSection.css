@@ -1,0 +1,182 @@
+.food-suggestions-row {
+    display: flex;
+    flex-direction: row;
+    gap: 22px;
+    justify-content: flex-start;
+    align-items: stretch;
+    min-height: 340px;
+  }
+  
+  .food-card {
+    background: #19213a;
+    border-radius: 14px;
+    box-shadow: 0 2px 12px rgba(22, 34, 50, 0.07);
+    padding: 22px 18px 18px 18px;
+    min-width: 250px;
+    max-width: 300px;
+    flex: 1 1 270px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    opacity: 1;
+    transition: opacity 0.4s, transform 0.4s;
+    height: 30vh;
+    max-height: 35vh;
+    border: #3f4653 solid 0.5px;
+  }
+  .food-card h4{
+    color: #e2ecfa;
+    margin: 0;
+    
+  }
+  .food-card h5{
+    font-size: 20px;
+    color: aliceblue;
+    font-weight: 800;
+  }
+  
+  /* Make the recipe list card a bit wider */
+  .card-recipes {
+    min-width: 320px;
+    max-width: 370px;
+    flex: 1.2 1 360px;
+    overflow-y: auto;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(100px);
+    transition: 
+      opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1), 
+      transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .card-recipes.slide-in {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+  }
+  
+  /* Make the instructions/steps card a lot wider */
+  .card-instructions {
+    min-width: 420px;
+    max-width: 700px;
+    flex: 2.4 1 520px;
+    overflow-y: auto;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(100px);
+    transition: 
+      opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1), 
+      transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .card-instructions.slide-in {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+  }
+  
+  .food-card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  input[type="text"] {
+    width: 90%;
+    padding: 9px 12px;
+    border-radius: 10px;
+    border: 1px solid #ccd7ee;
+    font-size: 15px;
+    background: #f3f6fb;
+    outline: none;
+    margin-bottom: 9px;
+  }
+  button {
+    background:#0f4192;
+    color: #fff;
+    padding: 8px 14px;
+    border-radius: 10px;
+    border: none;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 4px;
+  }
+  button:disabled {
+    background: #bbcdf0;
+    cursor: not-allowed;
+  }
+  .back-btn {
+    background: #f3f6fb;
+    color: #4187f6;
+    font-size: 14px;
+    font-weight: 500;
+    margin-top: 0;
+    margin-left: 10px;
+    transition: background 0.18s;
+  }
+  .back-btn:hover {
+    background: #e2ecfa;
+    color: #2856a7;
+  }
+  .recipes-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .recipe-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: #234a5ca4;
+    border-radius: 8px;
+    padding: 7px 10px;
+    font-size: 15px;
+    cursor: pointer;
+    transition: background 0.14s, color 0.14s;
+  }
+  .recipe-item:hover {
+    background: #4f7e96a4;
+    color: #4187f6;
+  }
+  .recipe-item img, .instructions-thumb {
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+    border-radius: 7px;
+    margin-right: 8px;
+    background: #eee;
+  }
+  .instructions-thumb {
+    width: 80px;
+    height: 80px;
+    margin: 0 0 13px 0;
+    display: block;
+  }
+  ol {
+    margin: 0;
+    padding-left: 16px;
+    font-size: 15px;
+    color: #bbcdf0;
+    line-height: 1.7;
+  }
+  .error {
+    color: #b54b4b;
+    font-size: 15px;
+    margin: 8px 0;
+  }
+  
+  /* Responsive: stack cards vertically on small screens */
+  @media (max-width: 900px) {
+    .food-suggestions-row {
+      flex-direction: column;
+      gap: 18px;
+      overflow-x: visible;
+    }
+    .food-card,
+    .card-recipes,
+    .card-instructions {
+      max-width: 100%;
+      min-width: 0;
+      flex-basis: auto;
+      color: #ccd7ee;
+    }
+  }

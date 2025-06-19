@@ -1,0 +1,27 @@
+.nutrition-tips {
+    display: flex;
+    gap: 24px;
+    padding: 24px 0 0 0;
+    background: none;
+    box-shadow: none;
+  }
+  .tip {
+    background: #f7faff;
+    border-radius: 16px;
+    padding: 20px 24px;
+    min-width: 210px;
+    flex: 1;
+    box-shadow: 0 2px 8px rgba(110,168,254,0.04);
+  }
+  .tip-title {
+    font-weight: 700;
+    font-size: 17px;
+    margin-bottom: 7px;
+  }
+  .tip-desc {
+    font-size: 15px;
+    color: rgb(211, 208, 208);
+  }
+  .brain-foods { background: #2e405e; }
+  .regular-meals { background: #2e405e; }
+  .hydration { background: #2e405e; }

@@ -1,0 +1,16 @@
+.app-root {
+  display: flex;
+  min-height: 125vh;
+  background: #151b2c;
+  margin: 0;
+  padding: 0;
+}
+
+.main-content {
+  margin-left: 300px;
+  width: 80%;
+  min-height: 100vh;
+  padding: 0; /* To allow space for footer */
+  position: relative;
+}
+
