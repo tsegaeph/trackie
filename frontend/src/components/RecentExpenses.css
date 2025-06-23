@@ -8,6 +8,10 @@
     gap: 5px;
     height: 100%;
     border: #3f4653 solid 0.5px;
+    max-height: 360px;   /* or whatever height fits your design */
+    overflow-y: auto;
+  /* optionally, prevent shrinking/growing if inside flex container */
+    flex-shrink: 0;
   }
   .recent-expenses-header {
     display: flex;
@@ -41,3 +45,30 @@
     margin: 18px 0 10px 0;
     font-size: 1.02rem;
   }
+
+  @media (max-width: 768px){
+    .recent-expenses-card{
+      max-height: 260px;
+      overflow-y: auto;
+    }
+    .recent-expenses-header h3{
+      font-size: 16px;            
+    }
+    span{
+      font-size: 14px;
+    }
+    .recent-expenses-date{
+      font-size: 14px;
+    }
+    .recent-expense-desc { font-weight: 600; font-size: 1rem; }
+  .recent-expense-cat { font-size: 0.95rem; color: #7887a7; }
+  .recent-expense-amt { font-weight: 700; font-size: 1rem; color: #4187f6; }
+  .recent-expense-row{
+    padding: 7px;
+  }
+  .recent-expenses-card{
+    margin-left: 10px;
+  }
+
+  }
+  

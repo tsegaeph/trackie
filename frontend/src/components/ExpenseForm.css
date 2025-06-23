@@ -29,3 +29,19 @@
     transition: background 0.17s;
   }
   .expense-form button:hover { background: #376fd2; }
+
+  @media (max-width: 768px){
+    .expense-form h3{
+      font-size: 18px;
+      margin-top: 5px;
+    }
+    .expense-form input, .expense-form select{
+      font-size: 0.8rem;
+    }
+    .expense-form button{
+      font-size: 1rem;
+    }
+    .expense-form{
+      margin-left: 10px;
+    }
+  }

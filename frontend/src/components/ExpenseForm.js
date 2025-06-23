@@ -65,7 +65,7 @@ export default function ExpenseForm({ onAdd, categories = [] }) {
         )}
       </select>
       <input
-        placeholder="AED 0.00"
+        placeholder="ETB 0.00"
         type="number"
         min="0"
         step="0.01"

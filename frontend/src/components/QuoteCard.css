@@ -45,3 +45,10 @@
     color: #ffffff;
     font-size: 1rem;
   }
+
+  /* 🔽 HIDE on mobile devices */
+@media (max-width: 768px) {
+  .quote-card {
+    display: none;
+  }
+}

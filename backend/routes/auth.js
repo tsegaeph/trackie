@@ -7,13 +7,13 @@ const router = express.Router();
 
 // POST /api/auth/register
 router.post('/register', async (req, res) => {
-  const { email, password } = req.body;
+  const { username, password } = req.body;
 
   try {
     // Check if user already exists
-    const existingUser = await User.findOne({ email });
+    const existingUser = await User.findOne({ username });
     if (existingUser) {
-      return res.status(400).json({ message: 'Email is already registered.' });
+      return res.status(400).json({ message: 'Username is already taken.' });
     }
 
     // Hash password
@@ -22,7 +22,7 @@ router.post('/register', async (req, res) => {
 
     // Create new user document
     const newUser = new User({
-      email,
+      username,
       password: hashedPassword,
     });
 
@@ -37,26 +37,30 @@ router.post('/register', async (req, res) => {
 
 // POST /api/auth/login
 router.post('/login', async (req, res) => {
-  const { email, password } = req.body;
+  const { username, password } = req.body;
 
   try {
     // Check user exists
-    const user = await User.findOne({ email });
-    if (!user) return res.status(400).json({ message: 'No user with this email found.' });
+    const user = await User.findOne({ username });
+    if (!user) {
+      return res.status(400).json({ message: 'No user with this username found.' });
+    }
 
     // Verify password
     const isMatch = await bcrypt.compare(password, user.password);
-    if (!isMatch) return res.status(400).json({ message: 'Incorrect password.' });
+    if (!isMatch) {
+      return res.status(400).json({ message: 'Incorrect password.' });
+    }
 
     // Create JWT token
     const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET, { expiresIn: '3d' });
 
-    // Send token and user info (only email here since no name)
+    // Send token and user info
     res.status(200).json({
       token,
       user: {
         id: user._id,
-        email: user.email,
+        username: user.username,
       },
     });
   } catch (err) {

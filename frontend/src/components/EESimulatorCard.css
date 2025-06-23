@@ -33,3 +33,41 @@
     background: #000;
     margin-bottom: 0;
   }
+
+  /* Tablets (portrait and smaller) */
+@media (max-width: 900px) {
+  .ee-sim-card {
+    min-width: 85vw;
+    height: auto;
+    padding: 20px;
+    margin-top: 30px;
+    margin-left: 30px;
+  }
+
+  .ee-sim-iframe {
+    min-width: 95%;
+    min-height: 500px;
+  }
+}
+
+/* Phones */
+@media (max-width: 600px) {
+  .ee-sim-card {
+    min-width: 80vw;
+    padding: 16px;
+    height: auto;
+    margin-top: 30px;
+    margin-left: 10px;
+  }
+
+  .ee-sim-title {
+    font-size: 15px;
+    text-align: center;
+  }
+
+  .ee-sim-iframe {
+    min-width: 100%;
+    min-height: 420px;
+    border-radius: 10px;
+  }
+}

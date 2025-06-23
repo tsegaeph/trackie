@@ -1,11 +1,11 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import "./LoginSignup.css";
 import SocialLoginButtons from "../components/SocialLoginButtons";
 
 export default function LoginPage() {
   const navigate = useNavigate();
-  const [email, setEmail] = useState("");
+  const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [errorMsg, setErrorMsg] = useState("");
 
@@ -14,20 +14,17 @@ export default function LoginPage() {
     setErrorMsg("");
 
     try {
-      const response = await fetch("http://localhost:5000/api/auth/login", {
+      const response = await fetch("/api/auth/login", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email, password })
+        body: JSON.stringify({ username, password }),
       });
 
       const data = await response.json();
 
       if (response.ok && data.token) {
-        // ✅ Save JWT to local storage
         localStorage.setItem("authToken", data.token);
-        localStorage.setItem("userEmail", data.user?.email || email); // Optional fallback
-
-        // ✅ Redirect to dashboard
+        localStorage.setItem("username", data.user?.username || username);
         navigate("/dashboard");
       } else {
         setErrorMsg(data.message || "Login failed. Please try again.");
@@ -43,10 +40,10 @@ export default function LoginPage() {
       <h2>Login</h2>
       <form onSubmit={handleLogin}>
         <input
-          type="email"
-          placeholder="Email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
+          type="text"
+          placeholder="Username"
+          value={username}
+          onChange={(e) => setUsername(e.target.value)}
           required
         />
         <input
@@ -59,7 +56,13 @@ export default function LoginPage() {
         <button type="submit">Log In</button>
         {errorMsg && <p className="auth-error">{errorMsg}</p>}
       </form>
-      <SocialLoginButtons />
+
+      <p style={{ marginTop: "1rem" }}>
+        Don't have an account?{" "}
+        <Link to="/signup" style={{ color: "#4187f6", textDecoration: "none" }}>
+          Signup
+        </Link>
+      </p>
     </div>
   );
 }

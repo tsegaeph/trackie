@@ -12,6 +12,7 @@ const PORT = process.env.PORT || 5000;
 // Middleware
 app.use(cors());
 app.use(express.json());
+app.use('/api', require('./routes/chat'));
 
 // Routes
 const authRoutes = require('./routes/auth');
@@ -29,7 +30,6 @@ app.use('/api/expenses', expenseRoutes);
 const budgetGoalRoutes = require('./routes/budgetGoalRoutes');
 app.use('/api/budgetgoals', budgetGoalRoutes);
 
-// Add these two lines for your new features:
 const waterIntakeRoutes = require('./routes/waterIntakeRoutes');
 app.use('/api/water', waterIntakeRoutes);
 
@@ -39,20 +39,23 @@ app.use('/api/meals', mealTrackerRoutes);
 const quoteRoutes = require('./routes/quoteRoutes');
 app.use('/api/quotes', quoteRoutes);
 
-// MongoDB connection
-mongoose.connect(process.env.MONGO_URI, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-})
-.then(() => console.log('✅ MongoDB connected'))
-.catch((err) => console.error('❌ MongoDB connection error:', err));
+app.use('/api/chat', require('./routes/chat'));
+
+// ---------- ADD THIS LINE BELOW for your AI upload endpoints ----------
+app.use('/api', require('./routes/aiUploadRoutes'));
+// ---------------------------------------------------------------------
+
+// MongoDB connection (cleaned)
+mongoose.connect(process.env.MONGO_URI)
+  .then(() => console.log('✅ MongoDB connected'))
+  .catch((err) => console.error('❌ MongoDB connection error:', err));
 
 // Basic route
 app.get('/', (req, res) => {
   res.send('🌐 Backend is running...');
 });
 
-// Error handler: always return JSON for errors
+// Error handler
 app.use((err, req, res, next) => {
   res.status(err.status || 500).json({ message: err.message || 'Server error' });
 });

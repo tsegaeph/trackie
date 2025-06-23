@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
-import { FaUserCircle } from "react-icons/fa";
-import ProfileModal from "./ProfileModal";
+// import { FaUserCircle } from "react-icons/fa";
+// import ProfileModal from "./ProfileModal";
 import "./Sidebar.css";
 
 const navLinks = [
@@ -9,28 +9,33 @@ const navLinks = [
   { label: "Expense Tracker", path: "/expense-tracker" },
   { label: "Food & Water", path: "/food-water" },
   { label: "EE Tools", path: "/ee-tools" },
+  { label: "Trackie AI Assistant", path: "/chatbot" }
 ];
 
-function Sidebar() {
+function Sidebar({ /* profile, updateProfile, */ isOpen, onClose }) {
   const navigate = useNavigate();
   const location = useLocation();
-  const [showProfile, setShowProfile] = useState(false);
 
-  // 🧑 Hardcoded default profile state
-  const [userProfile, setUserProfile] = useState({
-    name: "John Doe",
-    email: "john@example.com",
-    image: null, // or a placeholder image URL
-  });
+  // const [showProfile, setShowProfile] = useState(false);
+
+  // 🧑 Hardcoded default profile state (unused now)
+  // const [userProfile, setUserProfile] = useState({
+  //   name: "John Doe",
+  //   email: "john@example.com",
+  //   image: null,
+  // });
+
+  const handleNavClick = (path) => {
+    navigate(path);
+    if (window.innerWidth < 768) {
+      onClose(); // auto close on small screens
+    }
+  };
 
   return (
-    <div className="sidebar">
+    <div className={`sidebar ${isOpen ? 'open' : ''}`}>
       <div className="sidebar-logo-container">
-        <img
-          src="/images/sidebarpuppy.png"
-          alt="Puppy Logo"
-          className="sidebar-logo"
-        />
+        <img src="/images/sidebarpuppy.png" alt="Puppy Logo" className="sidebar-logo" />
         <span className="sidebar-app-name">Trackie</span>
       </div>
 
@@ -40,12 +45,11 @@ function Sidebar() {
             <li
               key={link.path}
               className={location.pathname === link.path ? "active" : ""}
-              onClick={() => navigate(link.path)}
+              onClick={() => handleNavClick(link.path)}
               tabIndex={0}
               onKeyDown={(e) => {
-                if (e.key === "Enter" || e.key === " ") navigate(link.path);
+                if (e.key === "Enter" || e.key === " ") handleNavClick(link.path);
               }}
-              style={{ cursor: "pointer", userSelect: "none" }}
             >
               {link.label}
             </li>
@@ -53,6 +57,7 @@ function Sidebar() {
         </ul>
       </nav>
 
+      {/* Profile section (disabled)
       <div
         className="sidebar-profile clickable"
         onClick={() => setShowProfile(true)}
@@ -60,11 +65,10 @@ function Sidebar() {
         onKeyDown={(e) => {
           if (e.key === "Enter" || e.key === " ") setShowProfile(true);
         }}
-        style={{ cursor: "pointer" }}
       >
-        {userProfile.image ? (
+        {profile.image ? (
           <img
-            src={userProfile.image}
+            src={profile.image}
             alt="Profile"
             className="sidebar-profile-icon"
             style={{ borderRadius: "50%", width: 36, height: 36 }}
@@ -73,7 +77,7 @@ function Sidebar() {
           <FaUserCircle size={36} className="sidebar-profile-icon" />
         )}
         <div>
-          <div className="sidebar-profile-name">{userProfile.name}</div>
+          <div className="sidebar-profile-name">{profile.name}</div>
           <div className="sidebar-profile-role">Student</div>
         </div>
       </div>
@@ -81,9 +85,10 @@ function Sidebar() {
       <ProfileModal
         isOpen={showProfile}
         onClose={() => setShowProfile(false)}
-        profileData={userProfile}
-        setProfileData={setUserProfile}
+        profileData={profile}
+        setProfileData={updateProfile}
       />
+      */}
     </div>
   );
 }

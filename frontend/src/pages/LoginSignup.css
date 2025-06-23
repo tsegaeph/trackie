@@ -1,64 +1,87 @@
 .auth-container {
-    max-width: 400px;
-    margin: 80px auto;
-    background: #1e293b;
-    padding: 30px;
-    border-radius: 20px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-    text-align: center;
-    position: relative;
-    top: 150px;
-    right: 80px;
-    height: 40vh;
-  }
-  
-  .auth-container h2 {
-    margin-bottom: 1.5rem;
-    font-size: 1.75rem;
-    color: #afc1dd;
-  }
-  
-  .auth-container input {
-    width: 90%;
-    margin-bottom: 1rem;
-    padding: 12px;
-    font-size: 1rem;
-    border: 1px solid #d1d5db;
-    border-radius: 10px;
-    background-color: #1e293b;
-    color: aliceblue;
-  }
-  
-  .auth-container button {
+  max-width: 400px;
+  margin: 100px auto;
+  background: #1e293b;
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  text-align: center;
+  height: auto;
+  position: relative;
+  top: 150px;
+  right: 100px;
+}
+
+.auth-container p{
+  color: aliceblue;
+}
+
+.auth-container link{
+  color: yellow;
+}
+
+.auth-container h2 {
+  margin-bottom: 1.5rem;
+  font-size: 1.75rem;
+  color: #afc1dd;
+}
+
+.auth-container input {
+  width: 90%;
+  margin-bottom: 1rem;
+  padding: 12px;
+  font-size: 1rem;
+  border: 1px solid #d1d5db;
+  border-radius: 10px;
+  background-color: #1e293b;
+  color: aliceblue;
+}
+
+.auth-container button {
+  width: 80%;
+  background: #334563;
+  color: white;
+  padding: 12px;
+  border: none;
+  border-radius: 10px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.auth-container button:hover {
+  background: #4e658d;
+}
+
+
+@media (max-width: 768px) {
+  .auth-container {
+    padding: 24px;
     width: 80%;
-    background: #334563;
-    color: white;
-    padding: 12px;
-    border: none;
-    border-radius: 10px;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: background 0.3s ease;
+    position: relative;
+    top: 170px;
+    left: 15px;
   }
-  
-  .auth-container button:hover {
-    background: #4e658d;
+}
+
+
+
+/* Mobile responsiveness */
+@media (max-width: 480px) {
+  .auth-container {
+    margin: 40px 6px;
+    padding: 20px;
   }
-  
-  @media (max-width: 480px) {
-    .auth-container {
-      margin: 40px 16px;
-      padding: 20px;
-    }
-  
-    .auth-container h2 {
-      font-size: 1.5rem;
-    }
-  
-    .auth-container input,
-    .auth-container button {
-      font-size: 0.95rem;
-      padding: 10px;
-    }
+
+  .auth-container h2 {
+    font-size: 1.5rem;
   }
-  
+
+  .auth-container input,
+  .auth-container button {
+    font-size: 0.95rem;
+    padding: 10px;
+  }
+}
+
+

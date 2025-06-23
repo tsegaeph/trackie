@@ -1,37 +1,71 @@
 .dashboard-header-card {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    background: #19213a;
-    border-radius: 16px;
-    padding: 32px 40px;
-    margin-bottom: 32px;
-    box-shadow: 0 1px 4px 0 rgba(0,0,0,0.03);
-    min-height: 180px;
-    width: 90%;
-    gap: 32px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  background: #19213a;
+  border-radius: 16px;
+  padding: 32px 40px;
+  margin-bottom: 32px;
+  box-shadow: 0 1px 4px 0 rgba(0,0,0,0.03);
+  min-height: 180px;
+  width: 90%;
+  gap: 32px;
+  position: relative; 
+}
+
+.dashboard-header-left {
+  flex: 2;
+  color: azure;
+}
+
+.dashboard-header-right {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+}
+
+.dashboard-header-date {
+  color: #bfcbe3;
+  margin-top: 8px;
+  margin-bottom: 24px;
+  font-size: 1rem;
+}
+
+.dashboard-header-chips-row {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+
+/* 🔽 Responsive mobile styles */
+
+@media (max-width: 768px) {
+  .dashboard-header-card {
+    flex-direction: column;
+    width: 85%;
+    padding: 24px 20px;
+    margin-top: 60px;
   }
-  
+
   .dashboard-header-left {
-    flex: 2;
-    color: azure;
+    width: 100%;
+    order: 1;
+    font-size: 10px;
   }
-  
-  .dashboard-header-right {
-    flex: 1;
-    display: flex;
-    justify-content: flex-end;
-    align-items: flex-start;
-  }
-  
-  .dashboard-header-date {
-    color: #bfcbe3;
-    margin-top: 8px;
-    margin-bottom: 24px;
-    font-size: 1rem;
-  }
-  
+
   .dashboard-header-chips-row {
-    display: flex;
-    gap: 20px;
+    flex-direction: column;
+    gap: 16px;
   }
+
+  .dashboard-header-right {
+    order: 2;
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    flex: none;
+  }
+
+  
+}

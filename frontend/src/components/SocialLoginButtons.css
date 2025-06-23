@@ -30,4 +30,12 @@
     width: 20px;
     height: 20px;
   }
+
+  @media(max-width: 480px){
+    .google-button{
+      position: relative;
+      left: 25px;
+    }
+
+  }
   

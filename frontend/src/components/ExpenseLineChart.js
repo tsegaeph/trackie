@@ -17,7 +17,7 @@ export default function ExpenseLineChart({ data, categories }) {
         <LineChart data={lineData}>
           <CartesianGrid strokeDasharray="3 3" />
           <XAxis dataKey="date" />
-          <YAxis unit=" AED" />
+          <YAxis unit=" ETB" />
           <Tooltip />
           <Legend />
           {categories.map((cat, idx) => (

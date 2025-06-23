@@ -14,3 +14,47 @@
   position: relative;
 }
 
+.hamburger {
+  font-size: 3rem;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  position: fixed;
+  top: 1rem;
+  left: 1rem;
+  z-index: 2000;
+  display: none;
+}
+
+@media (max-width: 768px) {
+
+  .hamburger {
+    display: block;
+  }
+
+  /* Sidebar slide-in behavior on mobile */
+  .sidebar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 250px;
+    height: 100%;
+    background-color: #1e2a45;
+    z-index: 1500;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .sidebar.open {
+    transform: translateX(0);
+    position: fixed;
+  }
+  
+
+  .main-content {
+    margin-left: 10px;
+    width: 95%;
+    overflow-x: hidden;
+  }
+}

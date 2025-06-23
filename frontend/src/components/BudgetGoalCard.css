@@ -90,3 +90,23 @@
     transition: height 0.3s;
     min-height: 0;
   }
+
+
+  @media (max-width: 768px) {
+
+    .budget-goal-card{
+      margin-left: 10px;
+    }
+    .budget-goal-card h3{
+      font-size: 18px;
+      position: relative;
+      right: 90px;
+    }
+    .budget-goal-inputs input{
+      width: 50px;
+      font-size: 13px;
+    }
+    .budget-goal-inputs label, .budget-bar-label{
+      font-size: 14px;
+    }
+  }

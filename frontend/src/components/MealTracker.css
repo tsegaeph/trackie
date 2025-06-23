@@ -93,3 +93,9 @@
     font-size: 12px;
     color: #d9dce4;
   }
+
+  @media (max-width: 768px) {
+    .switch {
+      width: 60px;
+    }
+  }

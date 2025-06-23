@@ -165,11 +165,13 @@
   }
   
   /* Responsive: stack cards vertically on small screens */
-  @media (max-width: 900px) {
+  @media (max-width: 768px) {
     .food-suggestions-row {
       flex-direction: column;
       gap: 18px;
       overflow-x: visible;
+      padding-bottom: 200px;
+
     }
     .food-card,
     .card-recipes,
@@ -178,5 +180,94 @@
       min-width: 0;
       flex-basis: auto;
       color: #ccd7ee;
+      overflow-y: scroll;
+      margin-left: 10px;
+    }
+
+    .card-recipes,
+    .card-instructions{
+      margin-bottom: 70px;
+    }
+    .food-card{
+      position: relative;
+      bottom: 10px;
     }
   }
+
+  @media (max-width: 600px) {
+    .food-suggestions-row {
+      padding: 12px;
+      gap: 14px;
+    }
+  
+    .food-card,
+    .card-recipes,
+    .card-instructions {
+      padding: 16px 14px 14px 14px;
+      max-width: 100%;
+      min-width: 0;
+      height: auto;
+      max-height: none;
+      font-size: 14px;
+      overflow-y: auto;
+      margin-left: 10px;
+    }
+    .card-recipes{
+      margin-bottom: 50px;
+    }
+    .card-instructions{
+      margin-bottom: 60px;
+    }
+    .food-card{
+      position: relative;
+      bottom: 10px;
+    }
+  
+    .food-card h4,
+    .food-card h5 {
+      font-size: 16px;
+    }
+  
+    input[type="text"] {
+      font-size: 14px;
+      padding: 7px 10px;
+    }
+  
+    button {
+      font-size: 14px;
+      padding: 6px 12px;
+    }
+  
+    .back-btn {
+      font-size: 13px;
+      margin-left: 6px;
+    }
+  
+    .recipe-item {
+      font-size: 14px;
+      padding: 6px 8px;
+    }
+  
+    .recipe-item img, .instructions-thumb {
+      width: 32px;
+      height: 32px;
+      margin-right: 6px;
+    }
+  
+    .instructions-thumb {
+      width: 70px;
+      height: 70px;
+      margin-bottom: 10px;
+    }
+  
+    ol {
+      font-size: 14px;
+      padding-left: 14px;
+      line-height: 1.5;
+    }
+  
+    .error {
+      font-size: 13px;
+    }
+  }
+  

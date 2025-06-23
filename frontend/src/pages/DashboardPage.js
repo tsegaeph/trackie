@@ -7,6 +7,8 @@ import Footer from "../components/Footer";
 import { useFoodWaterContext } from "../context/FoodWaterContext";
 import TechNewsCard from "../components/TechNewsCard";
 import "./DashboardPage.css";
+import { useNavigate } from "react-router-dom";
+
 
 const isSameDay = (d, today) =>
   d.getDate() === today.getDate() &&
@@ -22,6 +24,16 @@ function getTodayPeriodString() {
 }
 
 const DashboardPage = () => {
+
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    const token = localStorage.getItem("authToken");
+    if (!token) {
+      navigate("/login"); // 🔐 redirect if no token
+    }
+  }, [navigate]);
+  
   // --- Begin: Food & Water Progress State ---
   const {
     waterGoal,

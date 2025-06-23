@@ -17,19 +17,46 @@ export default function BudgetGoalCard({ expenses, onBudgetChange, budgets, load
   }, [budgets.daily, budgets.weekly, budgets.monthly]);
 
   const today = new Date();
-  const isSameDay = d => d.getDate() === today.getDate() && d.getMonth() === today.getMonth() && d.getFullYear() === today.getFullYear();
-  const weekStart = new Date(today);
-  weekStart.setDate(today.getDate() - today.getDay());
-  const isSameWeek = d => d >= weekStart && d <= today && d.getMonth() === today.getMonth();
-  const isSameMonth = d => d.getMonth() === today.getMonth() && d.getFullYear() === today.getFullYear();
 
-  const spent = {
-    daily: expenses.filter(e => isSameDay(e.date)).reduce((sum, e) => sum + e.amount, 0),
-    weekly: expenses.filter(e => isSameWeek(e.date)).reduce((sum, e) => sum + e.amount, 0),
-    monthly: expenses.filter(e => isSameMonth(e.date)).reduce((sum, e) => sum + e.amount, 0),
+  // Helper to zero out time for accurate date comparisons
+  const startOfDay = (date) => {
+    const d = new Date(date);
+    d.setHours(0, 0, 0, 0);
+    return d;
   };
 
-  const getPercent = (type) => Math.min(100, budgets[type] ? (spent[type] / budgets[type]) * 100 : 0);
+  const isSameDay = (d) => startOfDay(d).getTime() === startOfDay(today).getTime();
+
+  // Calculate start and end of current week (Sunday to Saturday)
+  const weekStart = startOfDay(new Date(today));
+  weekStart.setDate(today.getDate() - today.getDay()); // Sunday
+
+  const weekEnd = startOfDay(new Date(weekStart));
+  weekEnd.setDate(weekStart.getDate() + 6); // Saturday
+
+  const isSameWeek = (d) => {
+    const date = startOfDay(d);
+    return date >= weekStart && date <= weekEnd;
+  };
+
+  const isSameMonth = (d) =>
+    d.getMonth() === today.getMonth() && d.getFullYear() === today.getFullYear();
+
+  // Calculate total spent amounts
+  const spent = {
+    daily: expenses
+      .filter((e) => isSameDay(new Date(e.date)))
+      .reduce((sum, e) => sum + e.amount, 0),
+    weekly: expenses
+      .filter((e) => isSameWeek(new Date(e.date)))
+      .reduce((sum, e) => sum + e.amount, 0),
+    monthly: expenses
+      .filter((e) => isSameMonth(new Date(e.date)))
+      .reduce((sum, e) => sum + e.amount, 0),
+  };
+
+  const getPercent = (type) =>
+    Math.min(100, budgets[type] ? (spent[type] / budgets[type]) * 100 : 0);
 
   function handleInputChange(e) {
     const { name, value } = e.target;
@@ -87,13 +114,17 @@ export default function BudgetGoalCard({ expenses, onBudgetChange, budgets, load
               disabled={loading}
             />
           </div>
-          <button type="submit" disabled={loading}>Save</button>
+          <button type="submit" disabled={loading}>
+            Save
+          </button>
         </div>
       </form>
       <div className="budget-goal-bars">
         <div className="budget-bar-label">
           <span>Week</span>
-          <span>{spent.weekly.toFixed(2)} / {budgets.weekly} ETB</span>
+          <span>
+            {spent.weekly.toFixed(2)} / {budgets.weekly} ETB
+          </span>
         </div>
         <div className="budget-bar-outer">
           <div
@@ -104,7 +135,9 @@ export default function BudgetGoalCard({ expenses, onBudgetChange, budgets, load
         </div>
         <div className="budget-bar-label">
           <span>Month</span>
-          <span>{spent.monthly.toFixed(2)} / {budgets.monthly} ETB</span>
+          <span>
+            {spent.monthly.toFixed(2)} / {budgets.monthly} ETB
+          </span>
         </div>
         <div className="budget-bar-outer">
           <div

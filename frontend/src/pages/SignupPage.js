@@ -1,11 +1,10 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import "./LoginSignup.css";
-import SocialLoginButtons from "../components/SocialLoginButtons";
 
 export default function SignupPage() {
   const navigate = useNavigate();
-  const [email, setEmail] = useState("");
+  const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
 
@@ -13,12 +12,12 @@ export default function SignupPage() {
     e.preventDefault();
     setError("");
 
-    if (email && password) {
+    if (username && password) {
       try {
-        const response = await fetch("http://localhost:5000/api/auth/register", {
+        const response = await fetch("/api/auth/register", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ email, password }),
+          body: JSON.stringify({ username, password }),
         });
 
         const data = await response.json();
@@ -41,10 +40,10 @@ export default function SignupPage() {
       <h2>Sign Up</h2>
       <form onSubmit={handleSignup}>
         <input
-          type="email"
-          placeholder="Email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
+          type="text"
+          placeholder="Username"
+          value={username}
+          onChange={(e) => setUsername(e.target.value)}
           required
         />
         <input
@@ -57,7 +56,13 @@ export default function SignupPage() {
         {error && <p className="error-message">{error}</p>}
         <button type="submit">Sign Up</button>
       </form>
-      <SocialLoginButtons />
+
+      <p style={{ marginTop: "1rem" }}>
+        Already have an account?{" "}
+        <Link to="/login" style={{ color: "#4187f6", textDecoration: "none" }}>
+          Login
+        </Link>
+      </p>
     </div>
   );
 }
