@@ -41,11 +41,10 @@ app.use('/api/quotes', quoteRoutes);
 
 app.use('/api/chat', require('./routes/chat'));
 
-// ---------- ADD THIS LINE BELOW for your AI upload endpoints ----------
 app.use('/api', require('./routes/aiUploadRoutes'));
 // ---------------------------------------------------------------------
 
-// MongoDB connection (cleaned)
+// MongoDB connection 
 mongoose.connect(process.env.MONGO_URI)
   .then(() => console.log('✅ MongoDB connected'))
   .catch((err) => console.error('❌ MongoDB connection error:', err));
