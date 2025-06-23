@@ -2,3 +2,7 @@ backend/venv/
 backend/venv/
 backend/venv/
 frontend/node_modules/
+
+# Ignore env files
+.env
+backend/.env
