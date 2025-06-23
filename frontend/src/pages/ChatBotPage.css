@@ -268,7 +268,39 @@
   padding: 6px;
   border-radius: 6px;
   transition: background 0.2s, color 0.2s;
+
 }
+
+.typing-dots {
+  display: inline-block;
+  font-size: 1.5rem;
+  letter-spacing: 2px;
+}
+
+.typing-dots span {
+  animation: blink 1.5s infinite;
+  opacity: 0.2;
+}
+
+.typing-dots span:nth-child(1) {
+  animation-delay: 0s;
+}
+.typing-dots span:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.typing-dots span:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+@keyframes blink {
+  0%, 100% {
+    opacity: 0.2;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
 /* Optionally hide the voice button on mobile if you want even more space */
 @media (max-width: 480px) {
   .chatbot-action-btn[title="Voice"] {

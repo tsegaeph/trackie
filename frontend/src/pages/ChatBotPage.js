@@ -224,15 +224,20 @@ export default function ChatBotPage() {
             );
           })}
           {loading && (
-            <div className="chatbot-message chatbot-message-bot">
-              <div className="chatbot-message-bubble">
-                <span className="chatbot-message-icon">
-                  <img src={BOT_AVATAR} alt="AI" className="chatbot-bot-avatar" />
-                </span>
-                <span className="chatbot-message-content">Thinking...</span>
-              </div>
-            </div>
-          )}
+  <div className="chatbot-message chatbot-message-bot">
+    <div className="chatbot-message-bubble">
+      <span className="chatbot-message-icon">
+        <img src={BOT_AVATAR} alt="AI" className="chatbot-bot-avatar" />
+      </span>
+      <span className="chatbot-message-content">
+        <span className="typing-dots">
+          <span>.</span><span>.</span><span>.</span>
+        </span>
+      </span>
+    </div>
+  </div>
+)}
+
           <div ref={chatEndRef} />
         </div>
 
