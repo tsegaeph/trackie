@@ -13,7 +13,6 @@ const initialMessages = [
     type: 'system',
     content: (
       <>
-        <div className="chatbot-welcome-icon"><BsLock size={32} /></div>
         <div className="chatbot-welcome-header">Welcome to AI Assistant</div>
         <div className="chatbot-welcome-desc">
           I'm here to help answer your questions, provide information, and assist with various tasks. How can I help you today?
@@ -184,7 +183,7 @@ export default function ChatBotPage() {
         <div className="chatbot-header">
           <span className="chatbot-title">
             <img src={BOT_AVATAR} alt="AI Assistant" className="chatbot-title-avatar" />
-            AI Assistant <span className="chatbot-online"><FiCheckCircle /> Online</span>
+            Trackie <span className="chatbot-online"><FiCheckCircle /> Online</span>
           </span>
         </div>
 

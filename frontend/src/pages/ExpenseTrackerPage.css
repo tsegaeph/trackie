@@ -70,7 +70,7 @@
     max-width: 900px;
   }
   
-  @media (max-width: 1200px) {
+  @media (max-width: 600px) {
     .expense-tracker-row, .expense-tracker-charts-row {
       flex-direction: column;
       gap: 22px;
@@ -80,5 +80,9 @@
       margin: 0 !important;
       min-width: 0;
       max-width: 100%;
+    }
+    .expense-tracker-main{
+      position: relative;
+      margin-left: 4px;
     }
   }

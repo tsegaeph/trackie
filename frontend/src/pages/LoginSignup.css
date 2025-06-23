@@ -71,6 +71,7 @@
   .auth-container {
     margin: 40px 6px;
     padding: 20px;
+    position: fixed;
   }
 
   .auth-container h2 {

@@ -22,6 +22,10 @@
 
 /* 📱 Mobile adjustments */
 @media (max-width: 768px) {
+  .food-water-page{
+    margin-left: 7px;
+
+  }
   .fw-row {
     flex-direction: column;
   }

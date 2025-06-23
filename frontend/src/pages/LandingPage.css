@@ -123,15 +123,25 @@
 }
 
 @media (max-width: 480px) {
-  .drop-title span {
-    font-size: 2rem;
-    position: relative;
-    bottom: 100px;
+  .landing-container{
+    position: fixed;
   }
-
-  .landing-logo, .landing-subtitle, .landing-slogan, .landing-buttons{
+  .drop-title span {
+    font-size: 2.7rem;
     position: relative;
-    bottom: 100px;
+    bottom: 90px;
+    left: 80px;
+  }
+  .landing-logo{
+    position: relative;
+    bottom: 50px;
+    left: 85px;
+
+  }
+  .landing-subtitle, .landing-slogan, .landing-buttons{
+    position: relative;
+    bottom: 70px;
+    left: 60px;
   }
 
   .landing-subtitle {
@@ -141,6 +151,7 @@
   .landing-slogan {
     font-size: 1.1rem;
     margin-top: 30px;
+    margin-left: 20px;
   }
 
   .landing-buttons {

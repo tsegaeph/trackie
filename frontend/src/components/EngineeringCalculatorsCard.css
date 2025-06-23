@@ -138,7 +138,7 @@
 .calc-result {
   font-size: 1.15em;
   margin-top: 0.5em;
-  color: #222c;
+  color: rgba(45, 233, 101, 0.8);
 }
 
 .calc-desc {
@@ -179,7 +179,11 @@
   }
 
   .calc-desc {
-    font-size: 0.85em;
+    font-size: 0.95em;
+  }
+  .eng-calc-modal-bg{
+    margin-left: 10px;
+    margin-right: 10px;
   }
 
   .eng-calc-modal-content {
@@ -192,32 +196,3 @@
   }
 }
 
-@media (max-width: 480px) {
-  .eng-calc-card {
-    padding: 0.95rem;
-    border-radius: 14px;
-    margin-bottom: 100px;
-  }
-
-  .eng-calc-title {
-    font-size: 1rem;
-  }
-
-  .eng-calc-item {
-    font-size: 0.9rem;
-    padding: 0.6rem 0.75rem;
-  }
-
-  .calc-form input[type="number"],
-  .calc-form button[type="submit"] {
-    font-size: 0.9em;
-  }
-
-  .calc-result {
-    font-size: 0.95em;
-  }
-
-  .calc-desc {
-    font-size: 0.8em;
-  }
-}
