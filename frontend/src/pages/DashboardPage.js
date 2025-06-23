@@ -55,7 +55,7 @@ const DashboardPage = () => {
       const todayStr = getTodayPeriodString();
 
       // 1. Fetch all today's expenses
-      const expensesRes = await fetch(`http://localhost:5000/api/expenses`, {
+      const expensesRes = await fetch(`https://trackie.onrender.com/api/expenses`, {
         headers: { "Authorization": `Bearer ${token}` },
       });
       let todaySpent = 0;
@@ -71,7 +71,7 @@ const DashboardPage = () => {
       }
 
       // 2. Fetch today's daily budget
-      const budgetRes = await fetch(`http://localhost:5000/api/budgetgoals?period=${todayStr}`, {
+      const budgetRes = await fetch(`https://trackie.onrender.com/api/budgetgoals?period=${todayStr}`, {
         headers: { "Authorization": `Bearer ${token}` },
       });
       let budgetAmount = 0;

@@ -14,7 +14,7 @@ const WeatherCard = () => {
 
     navigator.geolocation.getCurrentPosition(async position => {
       const { latitude, longitude } = position.coords;
-      const apiKey = "6d6c59ffa92b2d6badbdd6828e6e83b2"; // Replace with your real key
+      const apiKey = process.env.REACT_APP_WEATHER_API_KEY;
 
       try {
         const res = await fetch(

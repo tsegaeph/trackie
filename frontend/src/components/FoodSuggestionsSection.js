@@ -4,7 +4,7 @@ import RecipeSuggestionsCard from "./RecipeSuggestionsCard";
 import CookingInstructionsCard from "./CookingInstructionsCard";
 import "./FoodSuggestionsSection.css";
 
-const API_KEY = "52f2bb2e40f24323b2160e45ed79e0f5";
+const API_KEY = process.env.REACT_APP_SPOONACULAR_API_KEY;
 
 const FoodSuggestionsSection = () => {
   const [recipes, setRecipes] = useState([]);

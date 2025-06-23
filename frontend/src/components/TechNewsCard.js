@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./TechNewsCard.css";
 
 // You need to get your own API key from https://newsapi.org/
-const NEWS_API_KEY = "7386297785fc40ada19aa001592ea7a7";
+const NEWS_API_KEY = process.env.REACT_APP_NEWS_API_KEY;
 
 // Broader, highly relevant keywords for tech, AI, electrical engineering, hackathons, cybersecurity, GITEX, etc.
 const KEYWORDS = [
@@ -71,7 +71,7 @@ const TechNewsCard = () => {
 
   return (
     <div className="dashboard-card tech-news-card">
-      <h4 className="tech-news-title">Tech News & Events (UAE)</h4>
+      <h4 className="tech-news-title">Tech News & Events</h4>
       {loading && <div className="tech-news-loading">Loading...</div>}
       {error && <div className="tech-news-error">{error}</div>}
       {!loading && !error && (

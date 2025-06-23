@@ -53,7 +53,7 @@ export default function ClassScheduleTable() {
     const fetchSchedule = async () => {
       try {
         const token = localStorage.getItem("authToken");
-        const res = await fetch("http://localhost:5000/api/classschedule", {
+        const res = await fetch("https://trackie.onrender.com/api/classschedule", {
           headers: { "Authorization": `Bearer ${token}` },
         });
         if (res.ok) {
@@ -78,7 +78,7 @@ export default function ClassScheduleTable() {
   const saveToBackend = async (cells) => {
     try {
       const token = localStorage.getItem("authToken");
-      const res = await fetch("http://localhost:5000/api/classschedule", {
+      const res = await fetch("https://trackie.onrender.com/api/classschedule", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

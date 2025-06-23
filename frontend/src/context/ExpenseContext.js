@@ -40,7 +40,7 @@ export function ExpenseProvider({ children }) {
 
   const fetchExpenses = async () => {
     const token = localStorage.getItem("authToken");
-    const res = await fetch("http://localhost:5000/api/expenses", {
+    const res = await fetch("https://trackie.onrender.com/api/expenses", {
       headers: { Authorization: `Bearer ${token}` },
     });
     if (res.ok) {
@@ -61,13 +61,13 @@ export function ExpenseProvider({ children }) {
     const { daily, weekly, monthly } = getPeriodStrings();
 
     const [res1, res2, res3] = await Promise.all([
-      fetch(`http://localhost:5000/api/budgetgoals?period=${daily}`, {
+      fetch(`https://trackie.onrender.com/api/budgetgoals?period=${daily}`, {
         headers: { Authorization: `Bearer ${token}` },
       }),
-      fetch(`http://localhost:5000/api/budgetgoals?period=${weekly}`, {
+      fetch(`https://trackie.onrender.com/api/budgetgoals?period=${weekly}`, {
         headers: { Authorization: `Bearer ${token}` },
       }),
-      fetch(`http://localhost:5000/api/budgetgoals?period=${monthly}`, {
+      fetch(`https://trackie.onrender.com/api/budgetgoals?period=${monthly}`, {
         headers: { Authorization: `Bearer ${token}` },
       }),
     ]);
@@ -93,7 +93,7 @@ export function ExpenseProvider({ children }) {
 
     await Promise.all(
       ["daily", "weekly", "monthly"].map((key) =>
-        fetch("http://localhost:5000/api/budgetgoals", {
+        fetch("https://trackie.onrender.com/api/budgetgoals", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",

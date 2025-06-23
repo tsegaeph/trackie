@@ -86,7 +86,7 @@ export default function ChatBotPage() {
     setLoading(true);
     try {
       const apiMessages = buildTogetherMessages(nextMessages).slice(-12);
-      const res = await fetch('/api/chat', {
+      const res = await fetch('https://trackie.onrender.com/api/chat', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ messages: apiMessages })
@@ -152,7 +152,7 @@ export default function ChatBotPage() {
     setMessages(msgs => [...msgs, { type: 'user', content: '[Image uploaded]', time: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }) }]);
     setLoading(true);
     try {
-      const res = await fetch('/api/image', { method: 'POST', body: formData });
+      const res = await fetch('https://trackie.onrender.com/api/image', { method: 'POST', body: formData });
       const data = await res.json();
       await handleSendTextAsUserMessage(data.caption || '[Image could not be described]');
     } catch {

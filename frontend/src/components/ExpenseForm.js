@@ -13,7 +13,7 @@ export default function ExpenseForm({ onAdd, categories = [] }) {
     setLoading(true);
     try {
       const token = localStorage.getItem("authToken");
-      const res = await fetch("http://localhost:5000/api/expenses", {
+      const res = await fetch("https://trackie.onrender.com/api/expenses", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

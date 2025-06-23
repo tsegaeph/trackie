@@ -72,7 +72,7 @@ const DashboardHeaderCard = () => {
   const fetchAssignments = async () => {
     try {
       const token = localStorage.getItem("authToken");
-      const res = await fetch("http://localhost:5000/api/assignments", {
+      const res = await fetch("https://trackie.onrender.com/api/assignments", {
         headers: {
           "Authorization": `Bearer ${token}`,
         },
@@ -104,7 +104,7 @@ const DashboardHeaderCard = () => {
     const fetchSchedule = async () => {
       try {
         const token = localStorage.getItem("authToken");
-        const res = await fetch("http://localhost:5000/api/classschedule", {
+        const res = await fetch("https://trackie.onrender.com/api/classschedule", {
           headers: { "Authorization": `Bearer ${token}` }
         });
         if (res.ok) {
@@ -122,7 +122,7 @@ const DashboardHeaderCard = () => {
   const addAssignment = async (assignment) => {
     try {
       const token = localStorage.getItem("authToken");
-      const res = await fetch("http://localhost:5000/api/assignments", {
+      const res = await fetch("https://trackie.onrender.com/api/assignments", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -150,7 +150,7 @@ const DashboardHeaderCard = () => {
   const deleteAssignment = async (_id) => {
     try {
       const token = localStorage.getItem("authToken");
-      const res = await fetch(`http://localhost:5000/api/assignments/${_id}`, {
+      const res = await fetch(`https://trackie.onrender.com/api/assignments/${_id}`, {
         method: "DELETE",
         headers: {
           "Authorization": `Bearer ${token}`,
