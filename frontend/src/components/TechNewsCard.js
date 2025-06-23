@@ -1,31 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./TechNewsCard.css";
 
-// You need to get your own API key from https://newsapi.org/
-const NEWS_API_KEY = process.env.REACT_APP_NEWS_API_KEY;
-
-// Broader, highly relevant keywords for tech, AI, electrical engineering, hackathons, cybersecurity, GITEX, etc.
-const KEYWORDS = [
-  "artificial intelligence",
-  "AI",
-  "machine learning",
-  "electrical engineering",
-  "tech innovation",
-  "hackathon",
-  "cybersecurity",
-  "GITEX",
-  "robotics",
-  "CTF competition",
-  "UAE technology",
-  "blockchain",
-  "quantum computing",
-  "startup UAE",
-  "digital transformation",
-];
-
-const NEWS_API_URL = `https://newsapi.org/v2/everything?q=${encodeURIComponent(
-  KEYWORDS.join(" OR ")
-)}&language=en&sortBy=publishedAt&pageSize=12&apiKey=${NEWS_API_KEY}`;
+const NEWS_API_URL = `${process.env.REACT_APP_API_BASE}/api/tech-news`;
 
 const TechNewsCard = () => {
   const [articles, setArticles] = useState([]);

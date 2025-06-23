@@ -39,9 +39,14 @@ app.use('/api/meals', mealTrackerRoutes);
 const quoteRoutes = require('./routes/quoteRoutes');
 app.use('/api/quotes', quoteRoutes);
 
+const newsRoutes = require("./routes/news");
+app.use("/api", newsRoutes);
+
 app.use('/api/chat', require('./routes/chat'));
 
 app.use('/api', require('./routes/aiUploadRoutes'));
+
+
 // ---------------------------------------------------------------------
 
 // MongoDB connection 
