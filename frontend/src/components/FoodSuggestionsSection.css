@@ -30,9 +30,10 @@
     
   }
   .food-card h5{
-    font-size: 20px;
+    font-size: 1.3rem;
     color: aliceblue;
     font-weight: 800;
+    margin-bottom: 0.5rem;
   }
   
   /* Make the recipe list card a bit wider */

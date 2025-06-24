@@ -25,11 +25,11 @@
   box-shadow: var(--cb-shadow);
   margin: 0 auto;
   padding: 0;
-  width: 172vh;
+  width: 84%;
   display: flex;
   flex-direction: column;
   flex: 1 1 0;
-  height: 86%;
+  height: 84%;
   min-height: 0;
   overflow: hidden;
   position: fixed;
