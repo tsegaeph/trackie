@@ -4,7 +4,7 @@
     min-height: 100vh;
     width: 100%;
     box-sizing: border-box;
-    position: fixed;
+
   }
   
   .expense-tracker-row {
@@ -86,3 +86,20 @@
       margin-left: 4px;
     }
   }
+
+  @media (max-width: 1024px) {
+    .expense-tracker-row, .expense-tracker-charts-row {
+      flex-direction: column;
+      gap: 20px;
+    }
+  
+    .budget-goal-container,
+    .expense-form-container,
+    .recent-expenses-container,
+    .pie-chart-card,
+    .line-chart-card {
+      max-width: 100%;
+      min-width: 0;
+    }
+  }
+  

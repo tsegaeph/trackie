@@ -8,7 +8,7 @@
     gap: 5px;
     height: 100%;
     border: #3f4653 solid 0.5px;
-    max-height: 360px;   /* or whatever height fits your design */
+    max-height: 86%;   /* or whatever height fits your design */
     overflow-y: auto;
   /* optionally, prevent shrinking/growing if inside flex container */
     flex-shrink: 0;
@@ -70,5 +70,18 @@
     margin-left: 10px;
   }
 
+  }
+  
+
+  @media (max-width: 480px) {
+    .recent-expense-desc { font-size: 0.95rem; }
+    .recent-expense-cat { font-size: 0.85rem; }
+    .recent-expense-amt { font-size: 0.95rem; }
+    .recent-expense-row {
+      padding: 6px 10px;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 4px;
+    }
   }
   

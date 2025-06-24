@@ -58,3 +58,18 @@
     overflow-x: hidden;
   }
 }
+
+/* Already has good structure; just fine-tuning */
+@media (max-width: 1024px) {
+  .main-content {
+    margin-left: 0;
+    width: 100%;
+    padding: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .main-content {
+    padding: 0.5rem;
+  }
+}
