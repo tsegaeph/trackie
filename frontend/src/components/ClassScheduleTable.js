@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./ClassScheduleTable.css";
 
-const days = ["MON", "TUE", "WED", "THU", "FRI", "SAT"];
+const days = ["SUN" ,"MON", "TUE", "WED", "THU", "FRI", "SAT"];
 function generateTimeRows() {
   const times = [];
   for (let h = 6; h < 18; h++) {
