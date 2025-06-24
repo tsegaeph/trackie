@@ -1,6 +1,5 @@
 .class-schedule-dialog {
     min-width: 420px;
-    max-width: 98vw;
     max-height: 520px;
     background: #fff;
     border-radius: 12px;
@@ -154,3 +153,46 @@
   .sched-cell.eng       { background: #f6e6f9; color: #b15edb; font-weight: 600;}
   .sched-cell.physics   { background: #e6f9ef; color: #2ecc99; font-weight: 600;}
   .sched-cell.study     { background: #fff8e3; color: #bfa243;}
+
+  @media (max-width: 768px) {
+    .class-schedule-dialog {
+      min-width: unset;
+      width: 110vw;
+      max-height: 90vh;
+      overflow-x: auto;
+      padding: 8px;
+    }
+  
+    .class-schedule-table {
+      font-size: 0.65rem;
+      min-width: 600px; /* force full table to render */
+    }
+  
+    .sched-time-th,
+    .sched-day-th,
+    .sched-time-td {
+      font-size: 0.7rem;
+      padding: 2px 4px;
+      width: 10px;
+    }
+    .sched-cell{
+      width: 10px;
+    }
+  
+    .sched-edit-modal {
+      max-width: 95vw;
+      padding: 14px;
+    }
+  
+    .sched-edit-textarea {
+      font-size: 0.9rem;
+    }
+  
+    .sched-save-btn,
+    .sched-delete-btn,
+    .sched-cancel-btn {
+      font-size: 0.85rem;
+      padding: 6px 10px;
+    }
+  }
+  

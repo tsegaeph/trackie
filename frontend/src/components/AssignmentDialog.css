@@ -1,5 +1,6 @@
 .assignment-dialog {
     min-width: 320px;
+    background-color: #2e405e;
   }
   .assignment-input-row {
     display: flex;
@@ -9,7 +10,7 @@
   }
   .assignment-input, .assignment-datepicker {
     border-radius: 8px;
-    border: 1.5px solid #d5dbef;
+    border: 1.5px solid #d7d9df;
     padding: 10px 11px;
     font-size: 1rem;
     outline: none;
@@ -36,6 +37,7 @@
     margin: 0;
     padding: 0;
     list-style: none;
+    color: aliceblue;
   }
   .assignment-list-item {
     display: flex;
@@ -43,6 +45,7 @@
     gap: 10px;
     margin-bottom: 7px;
     font-size: 1.05rem;
+    
   }
   .assignment-delete-btn {
     margin-left: 10px;
@@ -57,4 +60,12 @@
   }
   .assignment-delete-btn:hover {
     background: #d64545;
+  }
+
+  @media (max-width: 768px) {
+    .assignment-input-row{
+      display: flex;
+      flex-direction: column;
+    }
+
   }

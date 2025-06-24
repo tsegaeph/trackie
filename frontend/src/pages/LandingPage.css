@@ -102,7 +102,7 @@
 
 
 
-@media (max-width: 480px) {
+@media (max-width: 500px) {
   .landing-container{
     position: fixed;
     top: 8vh;
@@ -118,7 +118,7 @@
   .landing-logo{
     position: relative;
     bottom: 50px;
-    left: 110px;
+    left: 100px;
 
   }
   .landing-subtitle, .landing-slogan, .landing-buttons{
@@ -149,6 +149,7 @@
     font-size: 17px;
     position: relative;
     left: 70px;
+    bottom: 30px;
     border-radius: 18px;
   }
 }
